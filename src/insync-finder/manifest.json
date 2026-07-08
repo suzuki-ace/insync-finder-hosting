@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Insync Finder",
+  "version": "1.2",
+  "description": "Google DriveのURLから、Insyncが同期するローカルファイルを既定アプリで開く/Finderで表示する。",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnLss0Zk/I5L2ygwhgHGixVefez9EPxoZysr1lPXJUJJ5psfpeDiM77WJPovyQyMiEeewcMY+9tDFv4+woe+UHHTVi0SGfBiyIzCF7wnlQKnm755W74GVWZQlRT3hSrEkSGoHF2QL0WthV7bGFL6Au+KaZ67nslXObHEBqyS6IRFxd9nLXfeylkj6TMCFGeWSO/4dE57/vYrjF/qF7BlVcuT2FgwBEF88yZ96aUa1jKb+X142fWnntYr2SkQrz8er+fkQ0icaa9gJhn2ro5mMUBC5pmrTuvjfqdrqFBK/e2b6WW+pnl6r/nq5X4VAvE+j+yYEgDv47qmZT2+zB3PzOwIDAQAB",
+  "permissions": ["nativeMessaging", "contextMenus", "tabs"],
+  "background": { "service_worker": "background.js" },
+  "action": {
+    "default_title": "Insync: このファイルを既定アプリで開く",
+    "default_icon": { "16": "icon16.png", "48": "icon48.png", "128": "icon128.png" }
+  },
+  "icons": { "16": "icon16.png", "48": "icon48.png", "128": "icon128.png" }
+}
