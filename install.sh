@@ -21,6 +21,17 @@ URL_PATH="$INSTALL_BIN/insync-url.py"
 
 echo "Insync Finder の裏方を設置します..."
 
+# --- 0) python3（Command Line Tools）の確認 -------------------------------------
+# 両スクリプトは /usr/bin/python3（CLT同梱・純正）で動く。未導入なら先にCLTを入れる。
+if ! /usr/bin/python3 -V >/dev/null 2>&1; then
+  echo "python3 が見つかりません。コマンドラインツール（CLT）をインストールします..." >&2
+  xcode-select --install >/dev/null 2>&1 || true
+  echo "" >&2
+  echo "→ 画面に出たダイアログで『インストール』を押してください（管理者権限は不要・数分）。" >&2
+  echo "→ 完了したら、この install.sh をもう一度実行してください。" >&2
+  exit 1
+fi
+
 # --- 1) 裏方2本をGitHubからダウンロードして設置 ---------------------------------
 mkdir -p "$INSTALL_BIN"
 dl() {  # dl <url> <dest>
@@ -88,11 +99,6 @@ killall cfprefsd >/dev/null 2>&1 || true
 # サービス一覧を再読込し、Finderを再起動して反映（失敗しても続行）
 /System/Library/CoreServices/pbs -flush >/dev/null 2>&1 || true
 killall Finder >/dev/null 2>&1 || true
-
-# --- 4) python3 の確認 -----------------------------------------------------------
-if ! /usr/bin/env python3 --version >/dev/null 2>&1; then
-  echo "注意: python3 が見当たりません。ターミナルで  xcode-select --install  を実行してください。" >&2
-fi
 
 cat <<'DONE'
 
