@@ -13,8 +13,9 @@ set -e
 
 EXT_ID="nmmhggggollcnpglgdmjojnmohgkifhn"   # 拡張の固定ID（自己ホストcrx／unpackedとも共通）
 HOST_NAME="com.ujike.insyncfind"
-# 取得元は配布向けCDNのjsDelivr（GitHub rawはレート制限=429を踏みやすいため）
-RAW="https://cdn.jsdelivr.net/gh/suzuki-ace/insync-finder-hosting@main/src"
+# 取得元は配布向けCDNのjsDelivr（GitHub rawはレート制限=429を踏みやすいため）。
+# タグ固定（@main は反映ラグがあるため）。更新時は新タグを切って下記とREADMEを更新する。
+RAW="https://cdn.jsdelivr.net/gh/suzuki-ace/insync-finder-hosting@v1.2.1/src"
 
 INSTALL_BIN="$HOME/Library/Application Support/InsyncFinder"
 HOST_PATH="$INSTALL_BIN/insync-find-host.py"

@@ -28,7 +28,7 @@ Google Drive とローカル（Insync 同期先）を双方向でつなぐ 2 機
 拡張が管理コンソールから入っていても、裏方を入れないと動きません。各 Mac で次を 1 回実行します（管理者権限は不要）。
 
 ```
-curl -fsSL https://cdn.jsdelivr.net/gh/suzuki-ace/insync-finder-hosting@main/install.sh | bash
+curl -fsSL https://cdn.jsdelivr.net/gh/suzuki-ace/insync-finder-hosting@v1.2.1/install.sh | bash
 ```
 
 これで次が設置されます。
